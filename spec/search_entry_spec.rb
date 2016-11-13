@@ -53,7 +53,7 @@ describe MyanimelistClient::SearchEntry do
 
   context 'as an anime' do
     let :anime do
-      MyanimelistClient::SearchEntry.new episodes: 12
+      MyanimelistClient::SearchEntry.new episodes: 12, chapters: 0, volumes: 0
     end
 
     it 'is an anime' do
@@ -67,7 +67,7 @@ describe MyanimelistClient::SearchEntry do
 
   context 'as a manga' do
     let :manga do
-      MyanimelistClient::SearchEntry.new chapters: 22, volumes: 3
+      MyanimelistClient::SearchEntry.new chapters: 22, volumes: 3, episodes: 0
     end
 
     it 'is a manga' do

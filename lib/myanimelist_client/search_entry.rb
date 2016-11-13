@@ -99,12 +99,12 @@ class MyanimelistClient::SearchEntry
 
   # Returns +true+ when the entry describes an anime.
   def anime?
-    !!@episodes
+    @episodes.to_i > 0
   end
 
   # Returns +true+ when the entry describes a manga.
   def manga?
-    !!(@chapters && @volumes)
+    @chapters.to_i > 0 || @volumes.to_i > 0
   end
 
   # Returns +true+ when the anime is not yet aired / when the manga is not yet published.
