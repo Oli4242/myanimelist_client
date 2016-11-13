@@ -1,5 +1,6 @@
 # MyAnimeList Client
 [![Gem Version](https://badge.fury.io/rb/myanimelist_client.svg)](https://badge.fury.io/rb/myanimelist_client)
+[![Code Climate](https://codeclimate.com/github/Oli4242/myanimelist_client/badges/gpa.svg)](https://codeclimate.com/github/Oli4242/myanimelist_client)
 
 A gem for the [MyAnimeList.net API](https://myanimelist.net/modules.php?go=api).
 
@@ -10,7 +11,6 @@ For now you can:
 * [Verify credentials](https://myanimelist.net/modules.php?go=api#verifycred)
 
 ## Installation
-
 Add this line to your application's Gemfile:
 
 ```ruby
@@ -167,10 +167,11 @@ If you want to make a pull request:
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Write and run the specs before you commit (`rake spec`)
-4. Commit your changes (`git commit -am 'Add some feature'`)
-5. Push to the branch (`git push origin my-new-feature`)
-6. Create new Pull Request
+3. Write specs and test your code (`rake spec`)
+4. Try not to offend RuboCop (`rake rubocop`)
+5. Commit your changes (`git commit -am 'Add some feature'`)
+6. Push to the branch (`git push origin my-new-feature`)
+7. Create new Pull Request
 
 ## Thanks
 Thanks to [harveyico](https://github.com/harveyico) for his [myanimelist gem](https://github.com/harveyico/myanimelist), it helped me (I was using it before and its code kinda influenced me).

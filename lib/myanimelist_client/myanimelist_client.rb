@@ -53,17 +53,15 @@ class MyanimelistClient
   # @return [UserResponse] The API response or the error message nicely wraped in an object.
   #
   def verify_credentials
-    begin
-      response = RestClient::Request.execute(
-        method:  :get,
-        url:     'https://myanimelist.net/api/account/verify_credentials.xml',
-        user:     @username,
-        password: @password
-      )
-      UserResponse.new response.body
-    rescue RestClient::ExceptionWithResponse => e
-      UserResponse.new e.response.body
-    end
+    response = RestClient::Request.execute(
+      method:  :get,
+      url:     'https://myanimelist.net/api/account/verify_credentials.xml',
+      user:     @username,
+      password: @password
+    )
+    UserResponse.new response.body
+  rescue RestClient::ExceptionWithResponse => e
+    UserResponse.new e.response.body
   end
 
   # Allows to search anime titles.
@@ -72,18 +70,7 @@ class MyanimelistClient
   # @return [SearchResponse] The API response or the error message nicely wraped in an object.
   #
   def search_anime query
-    begin
-      escaped_query = CGI::escape query
-      response = RestClient::Request.execute(
-        method:  :get,
-        url:     "https://myanimelist.net/api/anime/search.xml?q=#{escaped_query}",
-        user:     @username,
-        password: @password
-      )
-      SearchResponse.new response.body
-    rescue RestClient::ExceptionWithResponse => e
-      SearchResponse.new e.response.body, :error
-    end
+    search 'anime', query
   end
 
   # Allows to search manga titles.
@@ -92,17 +79,31 @@ class MyanimelistClient
   # @return [SearchResponse] The API response or the error message nicely wraped in an object.
   #
   def search_manga query
-    begin
-      escaped_query = CGI::escape query
-      response = RestClient::Request.execute(
-        method:  :get,
-        url:     "https://myanimelist.net/api/manga/search.xml?q=#{escaped_query}",
-        user:     @username,
-        password: @password
-      )
-      SearchResponse.new response.body
-    rescue RestClient::ExceptionWithResponse => e
-      SearchResponse.new e.response.body, :error
+    search 'manga', query
+  end
+
+  private
+
+  # Search a manga or an anime depending on the provided type
+  # @param [String] type  The search type (+'anime'+ or +'manga'+).
+  # @param [String] query The search query.
+  # @return [SearchResponse] The API response or the error message nicely wraped in an object.
+  #
+  def search type, query
+    if type != 'anime' && type != 'manga'
+      raise 'Invalid search type: must be anime or manga'
     end
+    escaped_query = CGI::escape query
+    response = RestClient::Request.execute(
+      method:  :get,
+      url:     "https://myanimelist.net/api/#{type}/search.xml?q=#{escaped_query}",
+      user:     @username,
+      password: @password
+    )
+    SearchResponse.new response.body
+  rescue RestClient::ExceptionWithResponse => e
+    SearchResponse.new e.response.body, :error
+  rescue RuntimeError => e
+    SearchResponse.new e.message, :error
   end
 end

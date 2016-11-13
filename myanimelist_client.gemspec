@@ -11,7 +11,6 @@ Gem::Specification.new do |spec|
   spec.email         = ['Oli4242@users.noreply.github.com']
 
   spec.summary       = 'A client for the MyAnimeList.net API'
-  # spec.description   = %q{TODO: Write a longer description or delete this line.}
   spec.homepage      = 'https://github.com/Oli4242/myanimelist_client'
   spec.license       = 'MIT'
 
