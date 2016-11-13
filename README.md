@@ -1,4 +1,6 @@
 # MyAnimeList Client
+[![Gem Version](https://badge.fury.io/rb/myanimelist_client.svg)](https://badge.fury.io/rb/myanimelist_client)
+
 A gem for the [MyAnimeList.net API](https://myanimelist.net/modules.php?go=api).
 
 For now you can:
