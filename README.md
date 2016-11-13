@@ -155,6 +155,9 @@ end
 
 ```
 
+## API Documentation
+[The API documentation at rubydoc.info](http://www.rubydoc.info/github/Oli4242/myanimelist_client/master)
+
 ## Contributing
 Report issues at https://github.com/Oli4242/myanimelist_client.
 
