@@ -1,5 +1,5 @@
 # MyAnimeList Client
-[![Code Climate](https://codeclimate.com/github/Oli4242/myanimelist_client/badges/gpa.svg)](https://codeclimate.com/github/Oli4242/myanimelist_client)
+[![Gem Version](https://badge.fury.io/rb/myanimelist_client.svg)](https://badge.fury.io/rb/myanimelist_client)
 [![Code Climate](https://codeclimate.com/github/Oli4242/myanimelist_client/badges/gpa.svg)](https://codeclimate.com/github/Oli4242/myanimelist_client)
 
 A gem for the [MyAnimeList.net API](https://myanimelist.net/modules.php?go=api).
