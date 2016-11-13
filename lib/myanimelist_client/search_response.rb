@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This class represents a response to a search request. It is returned by {#search_anime} and {#search_manga}.
 #
 # +SearchResponse+ is responsible for parsing and wraping the XML response from the myanimelist API (or the error message).
@@ -96,7 +97,7 @@ class MyanimelistClient::SearchResponse
     @entries.size
   end
 
-  alias_method :size, :length
+  alias size length
 
   # Is it empty?
   def empty?

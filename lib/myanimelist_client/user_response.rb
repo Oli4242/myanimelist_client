@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This class represents a User. It is returned by {#verify_credentials}.
 #
 # +UserResponse+ is responsible for parsing and wraping the XML (or any error message) from the API.

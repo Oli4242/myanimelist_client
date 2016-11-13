@@ -1,5 +1,6 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "myanimelist_client"
+# frozen_string_literal: true
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'myanimelist_client'
 
 module Fixtures
   module Credentials

@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe MyanimelistClient::SearchEntry do
@@ -18,7 +19,7 @@ describe MyanimelistClient::SearchEntry do
     image
   ).each do |property|
     it "accepts ##{property}" do
-      entry  = MyanimelistClient::SearchEntry.new property => 'foobar'
+      entry = MyanimelistClient::SearchEntry.new property => 'foobar'
       expect(entry.send property).to eq 'foobar'
     end
   end
@@ -83,35 +84,35 @@ describe MyanimelistClient::SearchEntry do
     it 'knows when it is currently airing' do
       currently_airing = MyanimelistClient::SearchEntry.new status: 'Currently Airing'
       expect(currently_airing.upcoming?).to eq false
-      expect(currently_airing.ongoing? ).to eq true
+      expect(currently_airing.ongoing?).to eq true
       expect(currently_airing.finished?).to eq false
     end
 
     it 'knows when it is currently publishing' do
       currently_publishing = MyanimelistClient::SearchEntry.new status: 'Publishing'
       expect(currently_publishing.upcoming?).to eq false
-      expect(currently_publishing.ongoing? ).to eq true
+      expect(currently_publishing.ongoing?).to eq true
       expect(currently_publishing.finished?).to eq false
     end
 
     it 'knows when it is finished' do
       finished = MyanimelistClient::SearchEntry.new status: 'Finished'
       expect(finished.upcoming?).to eq false
-      expect(finished.ongoing? ).to eq false
+      expect(finished.ongoing?).to eq false
       expect(finished.finished?).to eq true
     end
 
     it 'knows when it is not yet aired' do
       not_yet_aired = MyanimelistClient::SearchEntry.new status: 'Not yet aired'
       expect(not_yet_aired.upcoming?).to eq true
-      expect(not_yet_aired.ongoing? ).to eq false
+      expect(not_yet_aired.ongoing?).to eq false
       expect(not_yet_aired.finished?).to eq false
     end
 
     it 'knows when it is not yet published' do
       not_yet_published = MyanimelistClient::SearchEntry.new status: 'Not yet published'
       expect(not_yet_published.upcoming?).to eq true
-      expect(not_yet_published.ongoing? ).to eq false
+      expect(not_yet_published.ongoing?).to eq false
       expect(not_yet_published.finished?).to eq false
     end
   end

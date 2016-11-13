@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This class is used to reprensent an entry within a {SearchResponse}. It can describe either an anime or a manga.
 #
 # @example
@@ -51,7 +52,6 @@
 # @attr [String, nil] image      Returns the image's URL.
 #
 class MyanimelistClient::SearchEntry
-
   # The list of attributes defining the entry for internal usage.
   ATTRIBUTES = %w(
     id
@@ -83,7 +83,7 @@ class MyanimelistClient::SearchEntry
   # Creates a hash representing the entry.
   # @return [Hash]
   def to_h
-    values = ATTRIBUTES.map{|attribute| send attribute }
+    values = ATTRIBUTES.map{ |attribute| send attribute }
     Hash[ATTRIBUTES.zip values]
   end
 

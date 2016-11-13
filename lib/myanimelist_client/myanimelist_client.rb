@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # This is the main class. It represents a client that can consume the {https://myanimelist.net/modules.php?go=api MyAnimeList.net API}.
 #
 # It allows to search for anime and manga titles as well as verify your username / password.

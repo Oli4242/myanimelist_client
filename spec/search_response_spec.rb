@@ -1,7 +1,7 @@
+# frozen_string_literal: true
 require 'spec_helper'
 
 describe MyanimelistClient::SearchResponse do
-
   it 'is convertible to array' do
     expect(MyanimelistClient::SearchResponse.new '').to respond_to :to_a
   end
