@@ -7,11 +7,11 @@ Gem::Specification.new do |spec|
   spec.name          = "myanimelist_client"
   spec.version       = MyanimelistClient::VERSION
   spec.authors       = ["Oli4242"]
-  # spec.email         = ["TODO: Write your email address"]
+  spec.email         = ["Oli4242@users.noreply.github.com"]
 
   spec.summary       = %q{A client for the MyAnimeList.net API}
   # spec.description   = %q{TODO: Write a longer description or delete this line.}
-  # spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.homepage      = "https://github.com/Oli4242/myanimelist_client"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
