@@ -77,12 +77,6 @@ Search anime with `#search_anime`:
 results = client.search_anime('anime name')
                           # => MyanimelistClient::SearchResponse
 
-results.length            # => Fixnum
-results.size              # => Fixnum
-results.empty?            # => true or false
-results.to_a              # => Array
-results[0]                # => MyanimelistClient::SearchEntry or nil
-
 # It includes Ruby's Enumerable module:
 results.each do |anime|
   anime.id                # => String or nil
@@ -98,8 +92,8 @@ results.each do |anime|
   anime.synopsis          # => String or nil
   anime.image             # => String or nil
 
-  anime.manga?            # => true
-  anime.anime?            # => false
+  anime.manga?            # => false
+  anime.anime?            # => true
   anime.upcoming?         # => true when the anime is not yet aired
   anime.ongoing?          # => true when the anime is currently airing
   anime.finished?         # => true when the anime is finished
@@ -107,10 +101,13 @@ results.each do |anime|
   anime.ok?               # when no error occured
   anime.error?            # when an error occured
   anime.raw               # => String containing the raw response from the API or the error message
-
   anime.to_h              # => Hash
 end
 
+results.length            # => Fixnum
+results.empty?            # => true or false
+results.to_a              # => Array
+results[0]                # => MyanimelistClient::SearchEntry or nil
 ```
 
 ### Search Manga
@@ -119,12 +116,6 @@ Search manga with `#search_manga`:
 ```ruby
 results = client.search_manga('anime name')
                           # => MyanimelistClient::SearchResponse
-
-results.length            # => Fixnum
-results.size              # => Fixnum
-results.empty?            # => true or false
-results.to_a              # => Array
-results[0]                # => MyanimelistClient::SearchEntry or nil
 
 # It includes Ruby's Enumerable module:
 results.each do |manga|
@@ -151,19 +142,22 @@ results.each do |manga|
   manga.ok?               # when no error occured
   manga.error?            # when an error occured
   manga.raw               # => String containing the raw response from the API or the error message
-
   manga.to_h              # => Hash
 end
 
+results.length            # => Fixnum
+results.empty?            # => true or false
+results.to_a              # => Array
+results[0]                # => MyanimelistClient::SearchEntry or nil
 ```
 
 ## API Documentation
 [The API documentation at rubydoc.info](http://www.rubydoc.info/github/Oli4242/myanimelist_client/master)
 
 ## Contributing
-Report issues at https://github.com/Oli4242/myanimelist_client.
+[Report issues here](https://github.com/Oli4242/myanimelist_client/issues).
 
-If you want to make a pull request:
+To make a pull request:
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
