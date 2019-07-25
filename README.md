@@ -1,3 +1,5 @@
+**Sadly [MyAnimeList discontinued their API](https://myanimelist.net/forum/?topicid=1740204), you might want to use [an alternative API](https://gist.github.com/cheeaun/6985966)**
+
 # MyAnimeList Client
 [![Gem Version](https://badge.fury.io/rb/myanimelist_client.svg)](https://badge.fury.io/rb/myanimelist_client)
 [![Code Climate](https://codeclimate.com/github/Oli4242/myanimelist_client/badges/gpa.svg)](https://codeclimate.com/github/Oli4242/myanimelist_client)
